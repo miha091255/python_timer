@@ -9,8 +9,8 @@
 1. _QBackingStore::endPaint() called with active painter; did you forget to destroy it or call QPainter::end() on it?_
 2. _QObject::setParent: Cannot set parent, new parent is in a different thread_
 
-1.1. ~~Причина:~~ Обращение к progressBar напрямую (self.progressBar.setValue(x))
-1.2. **Надо** обращаться через сигнал
+1.1 ~~Причина:~~ Обращение к progressBar напрямую (self.progressBar.setValue(x))
+1.2 **Надо** обращаться через сигнал
 class TimerClass(QGroupBox):
 progressChanged = QtCore.pyqtSignal(int)
 ...
